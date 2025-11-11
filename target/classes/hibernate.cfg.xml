@@ -10,6 +10,9 @@
         <property name="hibernate.show_sql">true</property>
         <!-- <property name="hibernate.format_sql">true</property> -->
 
-        <!-- <mapping class="com.example.model.Student"/> -->
+        <mapping class="com.hibernate.Student"/>
+        <mapping class="com.hibernate.Address"/>
+        <mapping class="com.hibernate.Course"/>
+        <mapping class="com.hibernate.Mobile"/>
     </session-factory>
 </hibernate-configuration>
