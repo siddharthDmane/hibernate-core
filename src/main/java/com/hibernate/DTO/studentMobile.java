@@ -9,7 +9,7 @@ public class studentMobile {
     private String sName;
     private char sGender;
 
-    private List<Mobile> sMobiles;
+    private List<Mobile> sMobiles = null;
 
     public studentMobile(int sId, String sName, char sGender, List<Mobile> sMobiles) {
         this.sId = sId;
@@ -58,7 +58,4 @@ public class studentMobile {
         return "studentMobile [sId=" + sId + ", sName=" + sName + ", sGender=" + sGender + ", sMobiles=" + sMobiles
                 + "]";
     }
-
-
-
 }
