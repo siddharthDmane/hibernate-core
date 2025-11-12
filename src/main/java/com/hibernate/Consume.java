@@ -17,18 +17,25 @@ public class Consume {
         Session session = factory.openSession();
         Transaction txn = session.beginTransaction();
 
-        //HQL Language
-        List<Student> hqlStudents = session.createQuery("from Student",Student.class).list();
+        // HQL Language
+        // List<Student> hqlStudents = session.createQuery("from Student",Student.class).list();
 
-        for(Student s : hqlStudents)
-            System.out.println(s);
+        // for(Student s : hqlStudents)
+        //     System.out.println(s);
 
-        //Native/ Usual SQL Language
-        // List<Object[]> nativeStudents = session.createNativeQuery("select s.address_id, a.* from student s inner join address a on s.address_id=a.id").list();
+        // Native/ Usual SQL Language
+        // List<Student> nativeStudents = session.createNativeQuery("select * from student",Student.class).list();
 
-        // for(Object[] s : nativeStudents)
-        //     for(Object o : s)
-        //         System.out.print(o+", ");
+        // for(Student s : nativeStudents)
+        //     System.out.print(s);
+
+        // Parameterized Native Query
+        List <Object[]> obj = session.createNativeQuery("select s.address_id, s.name from student s where id = ?")
+        .setParameter(1, 2)
+        .getResultList();
+
+        System.out.println(obj.get(0)[0]+", "+obj.get(0)[1]);
+
 
         txn.commit();
         session.close();
