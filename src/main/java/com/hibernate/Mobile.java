@@ -50,7 +50,7 @@ public class Mobile {
 
     @Override
     public String toString() {
-        return "Mobile [id=" + id + ", mobileNo=" + mobileNo + ", student=" + student + "]";
+        return "Mobile [id=" + id + ", mobileNo=" + mobileNo + "]";
     }
 
 }
